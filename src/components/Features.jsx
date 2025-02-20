@@ -1,29 +1,39 @@
 const Features = () => {
   const features = [
     {
+      number: "1",
       title: "AR-Based Land Analysis",
       description: "Scan and measure your garden space with augmented reality technology",
-      icon: "🔍"
+      icon: "🔍",
+      date: "Phase 1 - Planning"
     },
     {
+      number: "2",
       title: "Smart Garden Planning",
       description: "Get personalized crop and seed suggestions based on your garden conditions",
-      icon: "🌱"
+      icon: "🌱",
+      date: "Phase 2 - Design"
     },
     {
+      number: "3",
       title: "Weather-Based Insights",
       description: "Smart irrigation and climate data to optimize your garden care",
-      icon: "☀️"
+      icon: "☀️",
+      date: "Phase 3 - Monitoring"
     },
     {
+      number: "4",
       title: "Garden Health Monitoring",
       description: "Proactive gardening tips and yield predictions for better results",
-      icon: "🌿"
+      icon: "🌿",
+      date: "Phase 4 - Maintenance"
     },
     {
+      number: "5",
       title: "Marketplace",
       description: "Connect with local buyers to sell your surplus produce",
-      icon: "🏪"
+      icon: "🏪",
+      date: "Phase 5 - Distribution"
     }
   ];
 
@@ -35,12 +45,20 @@ const Features = () => {
           Discover how our AR technology revolutionizes home gardening
         </p>
 
-        <div className="features-grid">
+        <div className="timeline">
           {features.map((feature, index) => (
-            <div key={index} className="feature-card" style={{ border: "1px solid #ddd", padding: "20px", borderRadius: "10px", boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)" }}>
-              <div className="feature-icon">{feature.icon}</div>
-              <h3>{feature.title}</h3>
-              <p>{feature.description}</p>
+            <div key={index} className="timeline-item reveal">
+              <div className="timeline-marker">
+                <div className="timeline-number">
+                  <span className="feature-icon">{feature.icon}</span>
+                </div>
+                <div className="timeline-line"></div>
+              </div>
+              <div className="timeline-content">
+                <div className="timeline-date">{feature.date}</div>
+                <h3>{feature.title}</h3>
+                <p>{feature.description}</p>
+              </div>
             </div>
           ))}
         </div>
