@@ -9,4 +9,126 @@
 .social-button {
   background-color: var(--social-bg);
   color: var(--primary-color);
-} 
+}
+
+/* Form styles */
+.contact-form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #326655;
+}
+
+.message-icon {
+  top: 1.5rem;
+  transform: none;
+}
+
+/* Input styles */
+.input-wrapper input,
+.input-wrapper textarea {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  color: #326655;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  caret-color: #326655;
+}
+
+.input-wrapper textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Placeholder styles */
+.input-wrapper input::placeholder,
+.input-wrapper textarea::placeholder {
+  color: #666666;
+  opacity: 0.8;
+}
+
+/* Focus states */
+.input-wrapper input:focus,
+.input-wrapper textarea:focus {
+  outline: none;
+  border-color: #326655;
+}
+
+/* Remove autofill styles and enforce green text */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  -webkit-text-fill-color: #326655 !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Submit button styles */
+.submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 1rem;
+  background: #326655;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #3d7c67;
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Form status message styles */
+.form-status {
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+}
+
+.form-status.success {
+  color: #22c55e;
+}
+
+.form-status.error {
+  color: #ef4444;
+}
+
+.form-status.loading {
+  color: #326655;
+}

@@ -39,7 +39,7 @@ const Team = () => {
       name: "Yuneth Samarasinghe",
       role: "Member",
       emoji: "👨‍💻",
-      github: "https://github.com/YunethSamarasinghe"  
+      github: "https://github.com/yuneth123"  
     }
   ];
 

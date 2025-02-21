@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { FiUser, FiMail, FiMessageSquare, FiSend } from 'react-icons/fi';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaPaperPlane } from 'react-icons/fa';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -94,13 +94,9 @@ const Contact = () => {
                 <h3>Social</h3>
               </div>
               <div className="social-links">
-                <a href="#" target="_blank" rel="noopener noreferrer" className="social-button">
+                <a href="https://github.com/Akilalochana/Software-Development-Group-Project-" target="_blank" rel="noopener noreferrer" className="social-button">
                   <FaGithub />
                   <span>GitHub</span>
-                </a>
-                <a href="#" target="_blank" rel="noopener noreferrer" className="social-button">
-                  <FaLinkedin />
-                  <span>LinkedIn</span>
                 </a>
               </div>
             </div>
