@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { FiUser, FiMail, FiMessageSquare, FiSend, FiGithub, FiLinkedin, FiMapPin } from 'react-icons/fi';
 
 const Contact = () => {
@@ -19,25 +20,25 @@ const Contact = () => {
     setStatus({ type: 'loading', message: 'Sending message...' });
 
     try {
-      const response = await fetch('http://localhost:5000/api/messages', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      };
+
+      await emailjs.send(
+        'service_z7odhyo',
+        'template_k3nlaca',
+        templateParams,
+        'iJDAzNOEwBGgU0UTu'
+      );
+
+      setStatus({
+        type: 'success',
+        message: 'Message sent successfully! We will get back to you soon.'
       });
-
-      const data = await response.json();
-
-      if (data.success) {
-        setStatus({
-          type: 'success',
-          message: 'Message sent successfully! We will get back to you soon.'
-        });
-        setFormData({ name: '', email: '', subject: '', message: '' });
-      } else {
-        throw new Error(data.error || 'Failed to send message');
-      }
+      setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
       setStatus({
         type: 'error',
