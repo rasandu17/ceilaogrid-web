@@ -1,37 +1,45 @@
+import React from 'react';
+import './Team.css';
 import { FaGithub, FaLinkedin } from 'react-icons/fa'; // Import social icons
 import { FaCode, FaDesktop, FaDatabase, FaMobile, FaBrain, FaClipboardCheck } from 'react-icons/fa'; // Import role-specific icons
 
 const Team = () => {
   const teamMembers = [
     {
-      name: "Team Member 1",
-      github: "#",
-      linkedin: "#",
+      name: "Promodi Silva",
+      role: "Team Lead",
+      emoji: "👩‍💻",
+      github: "https://github.com/Pramodi25"  
     },
     {
-      name: "Team Member 2",
-      github: "#",
-      linkedin: "#",
+      name: "Ravindu Sandumith",
+      role: "Member",
+      emoji: "👨‍💻",
+      github: "https://github.com/rasandu17"  
     },
     {
-      name: "Team Member 3",
-      github: "#",
-      linkedin: "#",
+      name: "Navinya Dewamiththe",
+      role: "Member",
+      emoji: "👩‍💻",
+      github: "https://github.com/Navinya20"  
     },
     {
-      name: "Team Member 4",
-      github: "#",
-      linkedin: "#",
+      name: "Akila Sandakelum",
+      role: "Member",
+      emoji: "👨‍💻",
+      github: "https://github.com/Akilalochana"
     },
     {
-      name: "Team Member 5",
-      github: "#",
-      linkedin: "#",
+      name: "Pujana Rathnayake",
+      role: "Member",
+      emoji: "👨‍💻",
+      github: "https://github.com/pujanar"  
     },
     {
-      name: "Team Member 6",
-      github: "#",
-      linkedin: "#",
+      name: "Yuneth Samarasinghe",
+      role: "Member",
+      emoji: "👨‍💻",
+      github: "https://github.com/YunethSamarasinghe"  
     }
   ];
 
@@ -39,34 +47,27 @@ const Team = () => {
     <section className="team" id="team">
       <div className="container">
         <h2>Our Team</h2>
+        <p className="section-desc">
+          Meet the talented individuals behind Ceilão.Grid
+        </p>
+        
         <div className="team-grid">
           {teamMembers.map((member, index) => (
-            <div key={index} className="team-card reveal">
+            <a 
+              key={index} 
+              href={member.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="team-card"
+            >
+              <div className="member-emoji">
+                {member.emoji}
+              </div>
               <div className="member-info">
-                <div className="member-avatar">
-                  <span>{member.name.charAt(0)}</span>
-                </div>
                 <h3>{member.name}</h3>
+                <p>{member.role}</p>
               </div>
-              <div className="social-container">
-                <a 
-                  href={member.github} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="social-link"
-                >
-                  <FaGithub />
-                </a>
-                <a 
-                  href={member.linkedin} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="social-link"
-                >
-                  <FaLinkedin />
-                </a>
-              </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

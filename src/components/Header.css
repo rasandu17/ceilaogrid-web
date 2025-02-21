@@ -11,7 +11,7 @@
 }
 
 .header.scrolled {
-    background: rgba(255, 255, 255, 0.98);
+    background-color: var(--primary-dark);
     box-shadow: 0 2px 20px rgba(12, 107, 88, 0.1);
     padding: 0.5rem 0;
 }
@@ -72,9 +72,8 @@
     transition: transform 0.3s ease;
 }
 
-.nav a:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
+.nav a:hover {
+    color: var(--primary-light);
 }
 
 .join-button {

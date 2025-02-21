@@ -1,0 +1,12 @@
+.info-card:hover {
+  border-color: var(--primary-color);
+}
+
+.info-link:hover {
+  color: var(--primary-color);
+}
+
+.social-button {
+  background-color: var(--social-bg);
+  color: var(--primary-color);
+} 

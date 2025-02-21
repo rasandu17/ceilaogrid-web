@@ -1,0 +1,76 @@
+.team {
+  padding: 6rem 0;
+  background: var(--bg-dark);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.team-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--text-white);
+}
+
+/* Override all link states to remove default blue */
+.team-card,
+.team-card:link,
+.team-card:visited,
+.team-card:active {
+  color: var(--text-white);
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--primary-color);
+}
+
+.member-emoji {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.member-info h3 {
+  color: var(--text-white);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.team-card:hover .member-info h3 {
+  color: var(--primary-color); /* Our green color #326655 */
+}
+
+.member-info p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .team-card {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+} 

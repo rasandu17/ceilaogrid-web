@@ -20,8 +20,8 @@ const About = () => {
               implement eco-friendly gardening methods from the start
             </li>
             <li>
-              <strong>Community Platform:</strong> Connect with fellow gardeners
-              and share your journey when we launch
+              <strong>Farming at Your Fingertips:</strong> Control and monitor your garden 
+              with ease through our intuitive mobile interface
             </li>
           </ul>
         </div>

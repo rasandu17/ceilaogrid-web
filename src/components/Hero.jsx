@@ -11,8 +11,8 @@ const Hero = () => {
     'AR Technology',
     'Smart Planning',
     'Weather Insights',
-    'Health Monitoring',
-    'Local Marketplace'
+    'Chatbot Integration',
+    'Yield Prediction'
   ];
 
   useEffect(() => {

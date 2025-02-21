@@ -1,0 +1,22 @@
+:root {
+  /* Primary Colors */
+  --primary-color: #326655;    /* Main green color */
+  --primary-light: #3d7c67;    /* Lighter shade of primary */
+  --primary-dark: #264d40;     /* Darker shade of primary */
+  
+  /* Text Colors */
+  --text-white: #ffffff;       /* Pure white text */
+  --text-light: #e2e8f0;      /* Light gray text */
+  --text-muted: #94a3b8;      /* Muted text color */
+  
+  /* Background Colors */
+  --bg-dark: rgba(255, 255, 255, 0.03);    /* Subtle white overlay */
+  --bg-hover: rgba(255, 255, 255, 0.05);   /* Hover state background */
+  
+  /* Border Colors */
+  --border-color: rgba(255, 255, 255, 0.1); /* Subtle borders */
+  
+  /* Social Button Colors */
+  --social-bg: #ffffff;        /* White background */
+  --social-text: #326655;      /* Primary green for social buttons */
+} 

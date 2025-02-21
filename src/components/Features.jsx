@@ -16,24 +16,24 @@ const Features = () => {
     },
     {
       number: "3",
-      title: "Weather-Based Insights",
-      description: "Smart irrigation and climate data to optimize your garden care",
-      icon: "☀️",
-      date: "Phase 3 - Monitoring"
+      title: "Yield Calculation",
+      description: "Accurate predictions of harvest quantities and optimal timing",
+      icon: "📊",
+      date: "Phase 3 - Analytics"
     },
     {
       number: "4",
-      title: "Garden Health Monitoring",
-      description: "Proactive gardening tips and yield predictions for better results",
-      icon: "🌿",
-      date: "Phase 4 - Maintenance"
+      title: "Weather-Based Insights",
+      description: "Smart irrigation and climate data to optimize your garden care",
+      icon: "☀️",
+      date: "Phase 4 - Monitoring"
     },
     {
       number: "5",
-      title: "Marketplace",
-      description: "Connect with local buyers to sell your surplus produce",
-      icon: "🏪",
-      date: "Phase 5 - Distribution"
+      title: "Chatbot Integration",
+      description: "24/7 AI assistance for instant gardening advice and problem-solving",
+      icon: "🤖",
+      date: "Phase 5 - Support"
     }
   ];
 
