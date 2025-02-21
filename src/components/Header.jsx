@@ -33,8 +33,6 @@ const Header = () => {
                     </ul>
                 </nav>
 
-                <button className="join-button">JOIN US</button>
-
                 <button 
                     className="mobile-menu-btn"
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
