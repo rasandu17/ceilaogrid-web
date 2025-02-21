@@ -34,24 +34,6 @@ const Contact = () => {
         'iJDAzNOEwBGgU0UTu'
       );
 
-      const autoReplyParams = {
-        to_name: formData.name,
-        to_email: formData.email,
-        message: `Dear ${formData.name},
-
-Thank you for contacting Ceilão.Grid. We have received your message and will get back to you shortly.
-
-Best regards,
-The Ceilão.Grid Team`
-      };
-
-      await emailjs.send(
-        'service_z7odhyo',
-        'YOUR_AUTOREPLY_TEMPLATE_ID',
-        autoReplyParams,
-        'iJDAzNOEwBGgU0UTu'
-      );
-
       setStatus({
         type: 'success',
         message: 'Message sent successfully! We will get back to you soon.'
