@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
-import { FiMail, FiMessageSquare, FiSend } from 'react-icons/fi';
-import { HiLocationMarker } from 'react-icons/hi';
+import { FiUser, FiMail, FiMessageSquare, FiSend } from 'react-icons/fi';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    subject: '',
     message: ''
   });
 
@@ -24,6 +24,7 @@ const Contact = () => {
       const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
+        subject: formData.subject,
         message: formData.message,
       };
 
@@ -36,13 +37,13 @@ const Contact = () => {
 
       setStatus({
         type: 'success',
-        message: 'Message sent successfully!'
+        message: 'Message sent successfully! We will get back to you soon.'
       });
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
       setStatus({
         type: 'error',
-        message: 'Failed to send message. Please try again.'
+        message: 'Failed to send message. Please try again later.'
       });
     }
   };
@@ -58,38 +59,49 @@ const Contact = () => {
     <section className="contact" id="contact">
       <div className="container">
         <div className="contact-header">
-          <h2>Contact Us</h2>
-          <p>Get in touch with us</p>
+          <h2>Get in Touch</h2>
+          <p className="section-desc">
+            Have questions about Ceilao.Grid? We're here to help.
+          </p>
+          <div className="tech-line"></div>
         </div>
 
         <div className="contact-wrapper">
           <div className="contact-info">
-            <div className="contact-details">
-              <div className="contact-item">
-                <HiLocationMarker className="contact-icon" />
-                <div>
-                  <h4>Location</h4>
-                  <p>IIT Campus, Colombo</p>
-                </div>
+            <div className="info-card">
+              <div className="info-header">
+                <h3>Location</h3>
               </div>
-
-              <div className="contact-item">
-                <FiMail className="contact-icon" />
-                <div>
-                  <h4>Email</h4>
-                  <a href="mailto:ceilaogrid@gmail.com">ceilaogrid@gmail.com</a>
-                </div>
+              <div className="info-content">
+                <p className="info-title">IIT Campus</p>
+                <p className="info-subtitle">Colombo, Sri Lanka</p>
               </div>
+            </div>
 
-              <div className="contact-item">
-                <div className="social-links">
-                  <a href="#" target="_blank" rel="noopener noreferrer">
-                    <FaGithub />
-                  </a>
-                  <a href="#" target="_blank" rel="noopener noreferrer">
-                    <FaLinkedin />
-                  </a>
-                </div>
+            <div className="info-card">
+              <div className="info-header">
+                <h3>Email</h3>
+              </div>
+              <div className="info-content">
+                <a href="mailto:ceilaogrid@gmail.com" className="info-link">
+                  ceilaogrid@gmail.com
+                </a>
+              </div>
+            </div>
+
+            <div className="info-card">
+              <div className="info-header">
+                <h3>Social</h3>
+              </div>
+              <div className="social-links">
+                <a href="#" target="_blank" rel="noopener noreferrer" className="social-button">
+                  <FaGithub />
+                  <span>GitHub</span>
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer" className="social-button">
+                  <FaLinkedin />
+                  <span>LinkedIn</span>
+                </a>
               </div>
             </div>
           </div>
@@ -102,36 +114,63 @@ const Contact = () => {
             )}
             
             <div className="form-group">
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                placeholder="Your Name"
-              />
+              <div className="input-wrapper">
+                <FiUser className="input-icon" />
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  placeholder="Your Name"
+                />
+              </div>
             </div>
 
             <div className="form-group">
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                placeholder="Your Email"
-              />
+              <div className="input-wrapper">
+                <FiMail className="input-icon" />
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  placeholder="Your Email"
+                />
+              </div>
             </div>
 
             <div className="form-group">
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                placeholder="Your Message"
-                rows="5"
-              ></textarea>
+              <div className="input-wrapper">
+                <FiMessageSquare className="input-icon" />
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  placeholder="Subject"
+                />
+              </div>
+            </div>
+
+            <div className="form-group">
+              <div className="input-wrapper">
+                <FiMessageSquare className="input-icon message-icon" />
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  placeholder="Your Message"
+                  rows="5"
+                ></textarea>
+              </div>
             </div>
 
             <button 
@@ -139,7 +178,8 @@ const Contact = () => {
               className="submit-btn"
               disabled={status.type === 'loading'}
             >
-              {status.type === 'loading' ? 'Sending...' : 'Send Message'}
+              <span>{status.type === 'loading' ? 'Sending...' : 'Send Message'}</span>
+              <FiSend className="send-icon" />
             </button>
           </form>
         </div>
