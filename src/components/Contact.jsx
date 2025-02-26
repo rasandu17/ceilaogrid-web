@@ -35,7 +35,15 @@ const Contact = () => {
         'iJDAzNOEwBGgU0UTu'
       );
 
-      
+      await emailjs.send(
+        'service_z7odhyo',
+        'template_75w49fa', 
+        { 
+          from_name: 'Ceilao.Grid Team', 
+          user_email: formData.email  // Ensure this matches your template variable
+        },
+        'iJDAzNOEwBGgU0UTu'
+      );
       setStatus({
         type: 'success',
         message: 'Message sent successfully! We will get back to you soon.'
