@@ -39,14 +39,14 @@ const Contact = () => {
         'service_z7odhyo',
         'template_75w49fa', 
         { 
-          user_name: formData.name, 
-          reply_to: formData.email  // EmailJS typically uses "reply_to" for user email
+          from_name: 'Ceilao.Grid Team', 
+          user_email: formData.email  
         },
         'iJDAzNOEwBGgU0UTu'
       );
       
 
-
+      
       setStatus({
         type: 'success',
         message: 'Message sent successfully! We will get back to you soon.'
