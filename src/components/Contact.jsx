@@ -39,7 +39,7 @@ const Contact = () => {
         'service_z7odhyo',
         'template_75w49fa', 
         { 
-          from_name: 'Ceilao.Grid Team', 
+          from_name: formData.name, 
           user_email: formData.email  
         },
         'iJDAzNOEwBGgU0UTu'
