@@ -40,7 +40,7 @@ const Contact = () => {
         'template_75w49fa', 
         { 
           user_name: formData.name, 
-          reply_to: formData.email  
+          reply_to: formData.email  // EmailJS typically uses "reply_to" for user email
         },
         'iJDAzNOEwBGgU0UTu'
       );
