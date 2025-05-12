@@ -1,5 +1,5 @@
 # Ceilao.Grid - Marketing Website
-![alt text](Screenshot 2025-05-12 141644.png)
+![Ceilao.Grid Screenshot](Screenshot 2025-05-12 141644.png)
 
 ## About
 
